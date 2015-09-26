@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 gem 'devise'
+gem 'aws-sdk', '~> 2'
+gem 'dotenv-rails', :groups => [:development, :test]
 gem 'rename'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
