@@ -1,0 +1,2 @@
+class LocalHD < StorageType
+end
