@@ -2,12 +2,7 @@ Rails.application.routes.draw do
   get 'home/index'
 
   devise_for :users
-  devise_scope :user do
-   # get "signup", to: "devise/registrations#new"
-   # get "login", to: "devise/sessions#new"
-   # get "logout", to: "devise/sessions#destroy"
-   root to: "devise/sessions#new"
-  end
+  root to: "home#index"
   #root to: "devise/registrations#new"
   # Rails.application.routes.draw do
       # devise_for :users, controllers: {
