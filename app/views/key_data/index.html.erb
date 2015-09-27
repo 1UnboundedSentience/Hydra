@@ -13,6 +13,9 @@
     <%= f.submit %>
 <% end %>
 
-<%= @key_data %>
+<% @key_data.each do |datum| %>
+<%= datum.key %> <br>
+<% end %>
+
 </body>
 </html>

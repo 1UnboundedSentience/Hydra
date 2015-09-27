@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'home/index'
   get 'home/profile'
-
+  resources :key_data
   devise_for :users
   root to: "home#index"
   # devise_for :users, controllers: {

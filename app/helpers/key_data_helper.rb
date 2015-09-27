@@ -1,0 +1,2 @@
+module KeyDataHelper
+end
