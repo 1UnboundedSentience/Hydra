@@ -4,9 +4,8 @@
   <title>profile</title>
 </head>
 <body>
-  asdfs
   Welcome to your profile user! <br>
-  <%= link_to 'Enter key data to access your cloud services', new_key_datum_path(@key_data), method: :get %>
+  Enter key data to access your cloud services
   <%= form_for :key_datum, url: {:action=>"create", :controller=>"key_data"} do |f| %>
     <%= f.label :key %><br>
     <%= f.text_field :key %>  <br>
