@@ -11,13 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150926234410) do
+ActiveRecord::Schema.define(version: 20150927013101) do
 
   create_table "key_data", force: :cascade do |t|
     t.string   "key"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "storage_accounts", force: :cascade do |t|
+    t.integer  "storage_type_id"
+    t.string   "credential_blob"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "storage_accounts", ["storage_type_id"], name: "index_storage_accounts_on_storage_type_id"
 
   create_table "storage_types", force: :cascade do |t|
     t.string   "name"
@@ -43,5 +52,15 @@ ActiveRecord::Schema.define(version: 20150926234410) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "value_stores", force: :cascade do |t|
+    t.integer  "storage_account_id"
+    t.integer  "key_datum_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "value_stores", ["key_datum_id"], name: "index_value_stores_on_key_datum_id"
+  add_index "value_stores", ["storage_account_id"], name: "index_value_stores_on_storage_account_id"
 
 end
