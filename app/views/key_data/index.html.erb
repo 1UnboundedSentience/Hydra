@@ -6,15 +6,22 @@
 <body>
   Welcome to your profile user! <br>
   Enter key data to access your cloud services
+  <%= @storage_accounts.each do |acct| %>
+  <%= acct %> <br>
+<% end %>
   <%= form_for :key_datum, url: {:action=>"create", :controller=>"key_data"} do |f| %>
     <%= f.label :key %><br>
     <%= f.text_field :key %>  <br>
+    <%= f.label :account %><br>
+    <%= f.text_field :account %>  <br>
+
     <%= f.submit %>
 <% end %>
 
 <% @key_data.each do |datum| %>
-<%= datum.key %> <br>
+  <%= datum.key %> <br>
 <% end %>
+
 
 </body>
 </html>
